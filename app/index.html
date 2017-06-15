@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CampaignHub</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+
+  <link href="./skeleton.css" rel='stylesheet' type='text/css'>
+  <link href="./normalize.css" rel='stylesheet' type='text/css'>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="./app.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Campaign Hub </h2>
+  <h3>Campaigns </h3>
+<table class="u-full-width">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <!--<th>Owner</th>-->
+      <th>Goal (ETH)</th>
+      <th>Address</th>
+      <th>Balance (ETH)</th>
+      <th>Duration (s)</th>
+      <th>Deadline (s)</th>
+      <th>State</th>      
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Campaign 1</td>
+      <!--<td><span class="black"><span id="Campaign_owner_1"></td>-->
+      <td><span class="black"><span id="amount_goal_1"></td>
+      <td><span class="black"><span id="Campaign_address_1"></td>
+      <td><span class="black"><span id="amount_raised_1"></td>
+      <td><span class="black"><span id="duration_1"></td>
+      <td><span class="black"><span id="deadline_1"></td>
+      <td><span class="black"><span id="state_1"></td>
+    </tr>
+    <tr>
+      <td>Campaign 2</td>
+      <!--<td><span class="black"><span id="Campaign_owner_2"></td>-->
+      <td><span class="black"><span id="amount_goal_2"></td>
+      <td><span class="black"><span id="Campaign_address_2"></td>
+      <td><span class="black"><span id="amount_raised_2"></td>
+      <td><span class="black"><span id="duration_2"></td>
+      <td><span class="black"><span id="deadline_2"></td>      
+      <td><span class="black"><span id="state_2"></td>
+    </tr>
+    <tr>
+      <td>Campaign 3</td>
+      <!--<td><span class="black"><span id="Campaign_owner_3"></td>-->
+      <td><span class="black"><span id="amount_goal_3"></td>
+      <td><span class="black"><span id="Campaign_address_3"></td>
+      <td><span class="black"><span id="amount_raised_3"></td>
+      <td><span class="black"><span id="duration_3"></td>
+      <td><span class="black"><span id="deadline_3"></td>
+      <td><span class="black"><span id="state_3"></td>
+    </tr>    
+  </tbody>
+</table>
+
+<h5>Users</h5>
+<table class="u-full-width">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Balance (ETH)</th>     
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Alice</td>
+      <td><span class="black"><span id="user_address_1"></td>
+      <td><span class="black"><span id="user_balance_1"></td>
+    </tr>
+    <tr>
+      <td>Bob</td>
+      <td><span class="black"><span id="user_address_2"></td>
+      <td><span class="black"><span id="user_balance_2"></td>
+    </tr>
+    <tr>
+      <td>Carol</td>
+      <td><span class="black"><span id="user_address_3"></td>
+      <td><span class="black"><span id="user_balance_3"></td>
+    </tr>    
+  </tbody>
+</table>
+
+
+<h5>Select User</h5>
+<form>
+  <div class="row">
+    <div class="four columns">
+      <label for="i_user">Select User</label>
+      <select class="u-full-width" id="i_user">
+        <option value="1">Alice</option>
+        <option value="2">Bob</option>
+        <option value="3">Carol</option>
+      </select>
+    </div>
+  </div>  
+</form>
+
+
+<h5>Create a Campaign</h5>
+<form>
+  <div class="row">
+    <!--
+    <div class="four columns">
+      <label for="Campaign_name">Campaign Name</label>
+      <input class="u-full-width" type="number" placeholder="My Campaign" id="Campaign_name">
+    </div>
+    -->
+    <div class="four columns">
+      <label for="i_amount_goal">Fundraise Goal (ETH)</label>
+      <input class="u-full-width" type="number" placeholder="10" id="i_amount_goal">
+    </div>
+ 
+    <div class="four columns">
+      <label for="i_duration">Duration</label>
+      <input class="u-full-width" type="number" placeholder="200" id="i_duration">
+    </div>   
+  </div>
+</form>
+
+<br><button id="send" onclick="createCampaign()">Create Campaign</button>
+<br><button id="send" onclick="requestPayout()">Request payout</button>
+
+<h5>Contribute to a Campaign</h5>
+<form>
+  <div class="row">
+    <div class="four columns">
+      <label for="i_Campaign_num">Select Campaign</label>
+      <select class="u-full-width" id="i_Campaign_num">
+        <option value="1">Campaign 1</option>
+        <option value="2">Campaign 2</option>
+        <option value="3">Campaign 3</option>
+      </select>
+    </div> 
+    <div class="four columns">
+      <label for="contrib_amount">Contribution Amount (ETH)</label>
+      <input class="u-full-width" type="number" placeholder="1" id="contrib_amount">
+    </div>
+  </div>
+</form>
+
+<br><button id="send" onclick="contribute()">Contribute</button>
+<br><button id="send" onclick="requestRefund()">Request Refund</button>
+  
+  <br><br>
+  <h5>Status:</h5>
+  <span id="status"></span>
+
+</div>  
+</body>
+</html>
