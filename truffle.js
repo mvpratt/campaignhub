@@ -9,8 +9,8 @@ module.exports = {
     ],
     "normalize.css": [
       "stylesheets/normalize.css"
-    ],    
-    "images/": "images/"
+    ]    
+    
   },
   rpc: {
     host: "localhost",
